@@ -15,6 +15,7 @@
             --cream: #E1D7CD;
             --gold: #BD985E;
             --white: #FFFFFF;
+            --error: #E76F51;
         }
 
         * {
@@ -31,6 +32,8 @@
             padding: 40px 20px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .container {
@@ -50,19 +53,10 @@
         }
 
         .logo-container img {
-            max-width: 300px; /* Puedes ajustar el tamaño del logo cambiando este valor */
+            max-width: 300px;
             height: auto;
             display: block;
             margin: 0 auto;
-        }
-
-        .tagline {
-            font-family: 'IBM Plex Mono', monospace;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--gold);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
         }
 
         h1 {
@@ -126,7 +120,90 @@
         }
 
         .risk-grid {
-            grid-template-columns: 1fr; /* Lista de ancho completo debido a nombres largos */
+            grid-template-columns: 1fr;
+        }
+
+        /* =======================================================
+           NUEVOS ESTILOS: PANTALLA DE CONTRASEÑA INTEGRADA 
+        ======================================================= */
+        #login-screen {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            padding: 40px 30px;
+            background-color: rgba(225, 215, 205, 0.02);
+            border: 1px solid rgba(189, 152, 94, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-title {
+            font-family: 'Marcellus', serif;
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        .login-subtitle {
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 14px 20px;
+            background-color: rgba(10, 26, 51, 0.6);
+            border: 1px solid rgba(225, 215, 205, 0.3);
+            border-radius: 6px;
+            color: var(--white);
+            font-size: 1rem;
+            font-family: 'IBM Plex Sans', sans-serif;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .password-input:focus {
+            border-color: var(--gold);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'IBM Plex Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 15px;
+            display: none;
+            font-weight: 500;
         }
 
         /* Ajustes responsivos */
@@ -134,12 +211,29 @@
             h1 { font-size: 1.8rem; }
             .section-box { padding: 20px; }
             body { padding: 20px 10px; }
+            .login-title { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div id="login-screen">
+        <div class="logo-container">
+            <img src="LOGKRAME.png" alt="Logo Krame Consulting">
+        </div>
+        <h2 class="login-title">Contenido Confidencial</h2>
+        <p class="login-subtitle">Inteligencia Político Electoral</p>
+        
+        <form id="login-form" onsubmit="verificarPassword(event)">
+            <div class="input-group">
+                <input type="password" id="password" class="password-input" placeholder="Introduce la contraseña" required>
+            </div>
+            <button type="submit" class="submit-btn">Ingresar</button>
+            <p id="error-msg" class="error-message">Contraseña incorrecta. Inténtalo de nuevo.</p>
+        </form>
+    </div>
+
+    <div class="container" id="main-content" style="display: none;">
         <header>
             <div class="logo-container">
                 <img src="LOGKRAME.png" alt="Logo Krame Consulting">
@@ -230,6 +324,30 @@
             </section>
         </main>
     </div>
+
+    <script>
+        function verificarPassword(event) {
+            // Evita que el formulario recargue la página al hacer submit
+            event.preventDefault(); 
+            
+            const passwordCorrecta = "Krame2024";
+            const inputPassword = document.getElementById("password").value;
+            const errorMsg = document.getElementById("error-msg");
+            const loginScreen = document.getElementById("login-screen");
+            const mainContent = document.getElementById("main-content");
+
+            if (inputPassword === passwordCorrecta) {
+                // Esconde la caja de login y despliega el contenido de manera limpia
+                loginScreen.style.display = "none";
+                mainContent.style.display = "block";
+            } else {
+                // Muestra un mensaje de alerta sutil
+                errorMsg.style.display = "block";
+                // Limpia el input para que puedan reintentar cómodamente
+                document.getElementById("password").value = "";
+            }
+        }
+    </script>
 
 </body>
 </html>
