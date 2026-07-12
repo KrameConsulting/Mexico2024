@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia Político Electoral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variables con los colores de marca */
+        :root {
+            --navy: #0A1A33;
+            --cream: #E1D7CD;
+            --gold: #BD985E;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background-color: var(--navy);
+            color: var(--cream);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(225, 215, 205, 0.2);
+            padding-bottom: 30px;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 350px; /* Puedes ajustar el tamaño del logo cambiando este valor */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            font-family: 'IBM Plex Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Marcellus', serif;
+            font-size: 2.5rem;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* Estilos de las secciones / opciones */
+        .section-box {
+            background-color: rgba(225, 215, 205, 0.03);
+            border: 1px solid rgba(225, 215, 205, 0.1);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 35px;
+        }
+
+        .section-box h2 {
+            font-family: 'Marcellus', serif;
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(189, 152, 94, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        /* Enlaces estilizados como tarjetas de acceso */
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(225, 215, 205, 0.15);
+            padding: 20px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--cream);
+            transition: all 0.3s ease;
+            min-height: 65px;
+        }
+
+        .link-card:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .link-title {
+            font-weight: 500;
+            font-size: 1.05rem;
+            display: block;
+        }
+
+        .risk-grid {
+            grid-template-columns: 1fr; /* Lista de ancho completo debido a nombres largos */
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .section-box { padding: 20px; }
+            body { padding: 20px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="LOGKRAME.png" alt="Logo Krame Consulting">
+            </div>
+            <h1>POLITICAL & ELECTORAL INTELLIGENCE</h1>
+        </header>
+
+        <main>
+            <section class="section-box">
+                <h2>Resultados 2024 a nivel municipal</h2>
+                <div class="links-grid">
+                    <a href="https://pan2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PAN</span>
+                    </a>
+                    <a href="https://pri2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PRI</span>
+                    </a>
+                    <a href="https://prd2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PRD</span>
+                    </a>
+                    <a href="https://pvem2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PVEM</span>
+                    </a>
+                    <a href="https://ptmx2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PT</span>
+                    </a>
+                    <a href="https://mc2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">MC</span>
+                    </a>
+                    <a href="https://morena2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">MORENA</span>
+                    </a>
+                    <a href="https://votosnulos2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">Voto Nulo</span>
+                    </a>
+                    <a href="https://participacion2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">Participación Electoral</span>
+                    </a>
+                    <a href="https://bloques2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">Bloques Partidistas</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="section-box">
+                <h2>Indicadores electorales</h2>
+                <div class="links-grid">
+                    <a href="https://brechapan2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PAN</span>
+                    </a>
+                    <a href="https://brechapri2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PRI</span>
+                    </a>
+                    <a href="https://brechaprd2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PRD</span>
+                    </a>
+                    <a href="https://brechapt2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PT</span>
+                    </a>
+                    <a href="https://brechapvem2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">PVEM</span>
+                    </a>
+                    <a href="https://brechamc2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">MC</span>
+                    </a>
+                    <a href="https://brechamorena2024.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">MORENA</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="section-box">
+                <h2>Zonas de riesgo electoral</h2>
+                <div class="links-grid risk-grid">
+                    <a href="https://disturbiosfuerzasdeseguridad.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">Disturbios ocasionados por fuerzas de seguridad</span>
+                    </a>
+                    <a href="https://manifestacionespoblacioncivil.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">Manifestaciones pacíficas realizadas por la sociedad civil</span>
+                    </a>
+                    <a href="https://gruposarmados.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">Disturbios ocasionados por grupos armados no identificados</span>
+                    </a>
+                    <a href="https://disturbiosco.netlify.app/" target="_blank" class="link-card">
+                        <span class="link-title">Disturbios ocasionados por el Cartel de Sinaloa y el CJNG</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
